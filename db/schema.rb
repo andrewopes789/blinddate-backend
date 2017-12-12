@@ -34,21 +34,23 @@ ActiveRecord::Schema.define(version: 20171211200642) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
     t.string "email", null: false
-    t.string "img_url", null: false
+    t.string "img_url"
     t.string "password_digest", null: false
     t.string "session_token", null: false
     t.date "date_of_birth", null: false
     t.string "gender", null: false
     t.string "sexual_orientation", null: false
-    t.string "age_preference", null: false
+    t.string "age_preference"
     t.text "introduction"
     t.text "dream_job"
     t.text "cooking_preference"
     t.text "book_preference"
     t.text "movie_preference"
     t.text "pet_preference"
+    t.text "favorite_youtuber"
     t.text "outdoor_activity_preference"
     t.text "indoor_activity_preference"
     t.text "inside_joke"
@@ -59,7 +61,6 @@ ActiveRecord::Schema.define(version: 20171211200642) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
-    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end

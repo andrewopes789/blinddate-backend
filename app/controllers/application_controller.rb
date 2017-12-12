@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
+  # Above neeeded change because we know our data is correct and is necessary to pull to mobile
 
   helper_method :current_user, :signed_in?
 
