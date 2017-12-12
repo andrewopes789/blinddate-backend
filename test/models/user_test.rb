@@ -3,21 +3,23 @@
 # Table name: users
 #
 #  id                          :integer          not null, primary key
-#  username                    :string           not null
+#  first_name                  :string           not null
+#  last_name                   :string           not null
 #  email                       :string           not null
-#  img_url                     :string           not null
+#  img_url                     :string
 #  password_digest             :string           not null
 #  session_token               :string           not null
 #  date_of_birth               :date             not null
 #  gender                      :string           not null
 #  sexual_orientation          :string           not null
-#  age_preference              :string           not null
+#  age_preference              :string
 #  introduction                :text
 #  dream_job                   :text
 #  cooking_preference          :text
 #  book_preference             :text
 #  movie_preference            :text
 #  pet_preference              :text
+#  favorite_youtuber           :text
 #  outdoor_activity_preference :text
 #  indoor_activity_preference  :text
 #  inside_joke                 :text
