@@ -35,7 +35,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :first_name, :last_name, length: { maximum: 20 }
   validates :password, length: { minimum: 6, allow_nil: true }
-  validates :date_of_birth, :gender, :sexual_orientation, presence: true
 
   attr_reader :password
 

@@ -7,9 +7,9 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :img_url
       t.string :password_digest, null: false
       t.string :session_token, null: false
-      t.date :date_of_birth, null: false
-      t.string :gender, null: false
-      t.string :sexual_orientation, null: false
+      t.date :date_of_birth
+      t.string :gender
+      t.string :sexual_orientation
       t.string :age_preference
       t.text :introduction
       t.text :dream_job
