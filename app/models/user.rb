@@ -32,7 +32,8 @@
 
 class User < ApplicationRecord
   validates :first_name, :last_name, :email, :password_digest, :session_token, presence: true
-  validates :first_name, :last_name, :email, uniqueness: true, length: { maximum: 20 }
+  validates :email, uniqueness: true
+  validates :first_name, :last_name, length: { maximum: 20 }
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :date_of_birth, :gender, :sexual_orientation, presence: true
 
