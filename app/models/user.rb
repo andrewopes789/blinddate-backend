@@ -39,7 +39,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :user_matches,
-    foreign_key: :match_id,
+    foreign_key: :user_id,
     class_name: :Match
 
   has_many :matches,
@@ -47,7 +47,7 @@ class User < ApplicationRecord
     source: :match
 
   has_many :user_potentials,
-    foreign_key: :potential_id,
+    foreign_key: :user_id,
     class_name: :Potential
 
   has_many :potentials,

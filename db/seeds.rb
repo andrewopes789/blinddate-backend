@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-# first_namelast_nameemailimg_urlpassworddate_of_birthgendersexual_orientationage_preferenceintroductiondream_jobcooking_preferencebook_preferencemovie_preferencepet_preferencefavorite_youtuberoutdoor_activity_preferenceindoor_activity_preferenceinside_jokeintelligence_levelwhat_do_you_dopost_first_date
-
 
 
 User.create(first_name: "Batman", last_name: "Robin", email: "a",
@@ -26,4 +24,40 @@ User.create(first_name: "Batman", last_name: "Robin", email: "a",
     outdoor_activity_preference: Faker::Coffee.blend_name, indoor_activity_preference: Faker::Dessert.topping,
     inside_joke: Faker::Zelda.character, intelligence_level: Faker::Educator.university,
     what_do_you_do: Faker::Job.field, post_first_date: Faker::Movie.quote)
+
+end
+
+all_users = User.all.map(&:id)
+
+100.times do
+  user_id = all_users.sample
+  potential_id = all_users.sample
+
+  until potential_id != user_id do
+    potential_id = all_users.sample
+  end
+
+  Potential.create(user_id: user_id, potential_id: potential_id)
+end
+
+100.times do
+  user_id = all_users.sample
+  match_id = all_users.sample
+
+  until match_id != user_id do
+    match_id = all_users.sample
+  end
+
+  Match.create(user_id: user_id, match_id: match_id)
+end
+
+100.times do
+  match = Match.all.sample
+  sender_id = match.user_id
+  recipient_id = match.match_id
+
+  Message.create(
+    sender_id: sender_id,
+    recipient_id: recipient_id,
+    body: Faker::Seinfeld.quote)
 end
