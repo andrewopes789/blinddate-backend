@@ -1,7 +1,9 @@
-json.partial! 'user', user: @user
+json.user do
+  json.partial! 'user', user: @user
+end
 
 json.potentials do
-  @user.potentials.each do |potential|
+  @user.user_potentials.each do |potential|
     json.set! potential.id do
       json.partial! '/api/potentials/potential', potential: potential
     end
@@ -9,7 +11,7 @@ json.potentials do
 end
 
 json.matches do
-  @user.matches.each do |match|
+  @user.user_matches.each do |match|
     json.set! match.id do
       json.partial! '/api/matches/match', match: match
     end
