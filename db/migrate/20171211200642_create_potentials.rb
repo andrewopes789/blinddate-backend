@@ -3,8 +3,6 @@ class CreatePotentials < ActiveRecord::Migration[5.1]
     create_table :potentials do |t|
       t.integer :user_id, null: false
       t.integer :potential_id, null: false
-      t.boolean :do_you_like_them, null: false
-      t.boolean :do_they_like_you, null: false
 
       t.timestamps
     end

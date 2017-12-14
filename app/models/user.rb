@@ -54,6 +54,14 @@ class User < ApplicationRecord
     through: :user_potentials,
     source: :potential
 
+  has_many :sent_messages,
+    foreign_key: :sender_id,
+    class_name: :Message
+
+  has_many :received_messages,
+    foreign_key: :recipient_id,
+    class_name: :Message
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, password)
