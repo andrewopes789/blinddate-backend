@@ -29,7 +29,7 @@ end
 
 all_users = User.all.map(&:id)
 
-100.times do
+1000.times do
   user_id = all_users.sample
   potential_id = all_users.sample
 
@@ -40,7 +40,7 @@ all_users = User.all.map(&:id)
   Potential.create(user_id: user_id, potential_id: potential_id)
 end
 
-100.times do
+1000.times do
   user_id = all_users.sample
   match_id = all_users.sample
 
@@ -51,7 +51,18 @@ end
   Match.create(user_id: user_id, match_id: match_id)
 end
 
-100.times do
+1000.times do
+  user_id = all_users.sample
+  eligible_id = all_users.sample
+
+  until eligible_id != user_id do
+    eligible_id = all_users.sample
+  end
+
+  Eligible.create(user_id: user_id, eligible_id: eligible_id)
+end
+
+1000.times do
   match = Match.all.sample
   sender_id = match.user_id
   recipient_id = match.match_id
