@@ -26,6 +26,14 @@ json.matches do
   end
 end
 
+json.rejects do
+  @user.user_rejects.each do |reject|
+    json.set! reject.id do
+      json.partial! '/api/rejects/reject', reject: reject
+    end
+  end
+end
+
 json.messages do
   (@user.sent_messages + @user.received_messages).each do |message|
     json.set! message.id do

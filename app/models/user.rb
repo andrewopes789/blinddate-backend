@@ -62,6 +62,14 @@ class User < ApplicationRecord
     through: :user_potentials,
     source: :potential
 
+  has_many :user_rejects,
+    foreign_key: :user_id,
+    class_name: :Reject
+
+  has_many :rejects,
+    through: :user_rejects,
+    source: :reject
+
   has_many :sent_messages,
     foreign_key: :sender_id,
     class_name: :Message
