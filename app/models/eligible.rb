@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: eligibles
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer          not null
+#  eligible_id :integer          not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Eligible < ApplicationRecord
   validates :user_id, presence: true, uniqueness: { scope: :eligible_id }
 
