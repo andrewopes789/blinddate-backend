@@ -38,6 +38,14 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :user_eligibles,
+    foreign_key: :user_id,
+    class_name: :Eligible
+
+  has_many :eligibles,
+    through: :user_eligibles,
+    source: :eligible
+
   has_many :user_matches,
     foreign_key: :user_id,
     class_name: :Match
