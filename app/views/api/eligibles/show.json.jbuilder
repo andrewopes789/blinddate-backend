@@ -1,3 +1,3 @@
-json.eligible do
-  json.partial! '/api/potentials/potential', potential: @potential
+json.user do
+  json.partial! '/api/users/user', user: @eligible.user
 end
