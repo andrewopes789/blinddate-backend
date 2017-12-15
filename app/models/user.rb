@@ -9,9 +9,9 @@
 #  img_url                     :string
 #  password_digest             :string           not null
 #  session_token               :string           not null
-#  date_of_birth               :date             not null
-#  gender                      :string           not null
-#  sexual_orientation          :string           not null
+#  date_of_birth               :date
+#  gender                      :string
+#  sexual_orientation          :string
 #  age_preference              :string
 #  introduction                :text
 #  dream_job                   :text

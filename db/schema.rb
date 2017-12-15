@@ -34,8 +34,6 @@ ActiveRecord::Schema.define(version: 20171214045928) do
   create_table "potentials", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "potential_id", null: false
-    t.boolean "do_you_like_them", null: false
-    t.boolean "do_they_like_you", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id", "potential_id"], name: "index_potentials_on_user_id_and_potential_id", unique: true
