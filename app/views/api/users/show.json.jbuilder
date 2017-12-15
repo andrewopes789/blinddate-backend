@@ -2,6 +2,14 @@ json.user do
   json.partial! '/api/users/user', user: @user
 end
 
+json.eligibles do
+  @user.user_eligibles.each do |eligible|
+    json.set! eligible.id do
+      json.partial! '/api/eligibles/eligible', eligible: eligible
+    end
+  end
+end
+
 json.potentials do
   @user.user_potentials.each do |potential|
     json.set! potential.id do
