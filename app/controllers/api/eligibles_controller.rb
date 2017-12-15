@@ -16,6 +16,12 @@ class Api::EligiblesController < ApplicationController
   end
 
   def destroy
+    @eligible = Eligible.find_by(user_id: current_user.id, eligible_id: params[:id])
 
+    if @eligible.delete
+      render :show
+    else
+      render json: @eligible.errors.full_messages, status: 422
+    end
   end
 end
