@@ -1,3 +1,3 @@
-json.reject do
-  json.partial! '/api/rejects/reject', reject: @reject
+json.user do
+  json.partial! '/api/users/user', user: @reject.user
 end
