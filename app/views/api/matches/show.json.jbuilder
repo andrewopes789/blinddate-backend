@@ -1,4 +1,4 @@
-json.user do
+json.currentUser do
   json.partial! '/api/users/user', user: @match.user
 end
 
