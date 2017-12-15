@@ -6,10 +6,12 @@ class Api::MessagesController < ApplicationController
   def create
     sender_id = current_user.id
     recipient_id = params[:user_id]
+
     @message = Message.new(
       sender_id: sender_id,
       recipient_id: recipient_id,
-      body: message_params[:body])
+      body: message_params[:inputMessage],
+      mess: message_params[:mess])
 
     if @message.save
       render :show
@@ -21,6 +23,6 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.permit(:body, :format, :user_id, :mess, inputMessage: [:message])
+    params.permit(:inputMessage, :mess)
   end
 end
