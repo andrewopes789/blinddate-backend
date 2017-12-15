@@ -5,7 +5,7 @@ class CreateMessages < ActiveRecord::Migration[5.1]
       t.integer :recipient_id, null: false
       t.text :body, null: false
       t.string :mess, array: true, default: []
-      
+
       t.timestamps
     end
   end
