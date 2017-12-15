@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :eligibles, only: %i(index create)
       resources :matches, only: %i(index create)
       resources :potentials, only: %i(index create)
+      resources :rejects, only: %i(index create)
       member do
         delete 'eligible', to: 'eligibles#destroy'
         delete 'potential', to: 'potentials#destroy'

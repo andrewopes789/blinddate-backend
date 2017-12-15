@@ -24,4 +24,5 @@ json.matches_by_id user.user_matches.map(&:match_id)
 json.potentials_by_id user.user_potentials.map(&:potential_id)
 json.messages_by_id user.sent_messages.map(&:id) + user.received_messages.map(&:id)
 json.eligibles_by_id user.user_eligibles.map(&:eligible_id)
-# json.age time_ago_in_words(user.date_of_birth).slice(7..8).to_i
+json.rejects_by_id user.user_rejects.map(&:reject_id)
+json.age time_ago_in_words(user.date_of_birth).slice(7..8).to_i
