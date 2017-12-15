@@ -1,12 +1,15 @@
 class Api::MessagesController < ApplicationController
   def index
-    @messages = current_user.sent_messages + current_user.received_messages
+    @messages = User.find(params[:user_id]).sent_messages + User.find(params[:user_id]).received_messages
   end
 
   def create
     sender_id = current_user.id
     recipient_id = params[:user_id]
-    @message = Message.new(sender_id: sender_id, recipient_id: recipient_id, body: message_params[:body])
+    @message = Message.new(
+      sender_id: sender_id,
+      recipient_id: recipient_id,
+      body: message_params[:body])
 
     if @message.save
       render :show

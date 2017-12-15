@@ -23,3 +23,4 @@ json.post_first_date user.post_first_date
 json.matches_by_id user.user_matches.map(&:id)
 json.potentials_by_id user.user_potentials.map(&:id)
 json.messages_by_id user.sent_messages.map(&:id) + user.received_messages.map(&:id)
+# json.age time_ago_in_words(user.date_of_birth).slice(7..8).to_i

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     resource :session, only: %i(create destroy)
     resources :users, only: %i(index create show update) do
       resources :messages, only: %i(index create)
+      resources :eligibles, only: %i(index create destroy)
+      resources :potentials, only: %i(index create destroy)
+      resources :matches, only: %i(index create destroy)
     end
   end
 end
