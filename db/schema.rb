@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20171215060243) do
     t.string "img_url"
     t.string "password_digest", null: false
     t.string "session_token", null: false
-    t.date "date_of_birth"
+    t.date "date_of_birth", default: "1996-03-24"
     t.string "gender"
     t.string "sexual_orientation"
     t.string "age_preference"
