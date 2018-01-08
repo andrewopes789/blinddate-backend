@@ -12,7 +12,8 @@
 #  date_of_birth               :date
 #  gender                      :string
 #  sexual_orientation          :string
-#  age_preference              :string
+#  age_preference_floor        :string
+#  age_preference_ceiling     :string
 #  introduction                :text
 #  dream_job                   :text
 #  cooking_preference          :text
