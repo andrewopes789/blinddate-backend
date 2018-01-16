@@ -32,6 +32,8 @@
 #
 
 class User < ApplicationRecord
+  include ActionView::Helpers::DateHelper
+
   validates :first_name, :last_name, :email, :password_digest, :session_token, presence: true
   validates :email, uniqueness: true
   validates :first_name, :last_name, length: { maximum: 20 }
@@ -80,6 +82,12 @@ class User < ApplicationRecord
     class_name: :Message
 
   after_initialize :ensure_session_token
+
+  def age
+    if self.date_of_birth
+      time_ago_in_words(self.date_of_birth).slice(7..8).to_i
+    end
+  end
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
