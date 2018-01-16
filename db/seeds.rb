@@ -15,16 +15,30 @@ User.create(first_name: "Batman", last_name: "Robin", email: "a",
 
 30.times do
 
-  User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.email,
-    img_url: Faker::Placeholdit.image("50x50"), password: "password",
-    date_of_birth: "1980-12-30", gender: ["male", "female"].sample, sexual_orientation: "bisexual",
+  User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    img_url: Faker::Placeholdit.image("50x50"),
+    password: "password",
+    date_of_birth: "1980-12-30",
+    gender: ["male", "female"].sample,
+    sexual_orientation: "bisexual",
     age_preference: Faker::Number.number(2),
-    introduction: Faker::Seinfeld.quote, dream_job: Faker::Job.title,
-    cooking_preference: Faker::Food.dish, book_preference: Faker::Book.title, movie_preference: Faker::HarryPotter.book,
-    pet_preference: Faker::Pokemon.name, favorite_youtuber: Faker::Witcher.character,
-    outdoor_activity_preference: Faker::Coffee.blend_name, indoor_activity_preference: Faker::Dessert.topping,
-    inside_joke: Faker::Zelda.character, intelligence_level: Faker::Educator.university,
-    what_do_you_do: Faker::Job.field, post_first_date: Faker::Movie.quote)
+    introduction: Faker::BackToTheFuture.quote,
+    dream_job: Faker::Job.title,
+    cooking_preference: Faker::Food.dish,
+    book_preference: Faker::Book.title,
+    movie_preference: Faker::HarryPotter.book,
+    pet_preference: Faker::Pokemon.name,
+    favorite_youtuber: Faker::Witcher.character,
+    outdoor_activity_preference: Faker::Coffee.blend_name,
+    indoor_activity_preference: Faker::Dessert.topping,
+    inside_joke: Faker::Zelda.character,
+    intelligence_level: Faker::Educator.university,
+    what_do_you_do: Faker::Job.field,
+    post_first_date: Faker::Movie.quote
+  )
 
 end
 

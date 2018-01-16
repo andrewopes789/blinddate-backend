@@ -5,33 +5,33 @@ class Api::EligiblesController < ApplicationController
       current_user.sexual_orientation === 'straight'
       @eligibles = User.where(:gender => 'female', :sexual_orientation => 'straight') + User.where(:gender => 'female', :sexual_orientation => 'bisexual')
       @eligibles.each do |el|
-        if !current_user.rejects_by_id.include?(el.id)
+        # if !current_user.rejects_by_id.include?(el.id)
           Eligible.create(user_id: current_user.id, eligible_id: el.id)
-        end
+        # end
       end
     elsif current_user.gender === 'male' &&
       current_user.sexual_orientation === 'gay'
       @eligibles = User.where(:gender => 'male', :sexual_orientation => 'bisexual') + User.where(:gender => 'male', :sexual_orientation => 'gay')
       @eligibles.each do |el|
-        if !current_user.rejects_by_id.include?(el.id)
+        # if !current_user.rejects_by_id.include?(el.id)
           Eligible.create(user_id: current_user.id, eligible_id: el.id)
-        end
+        # end
       end
     elsif current_user.gender === 'female' &&
       current_user.sexual_orientation === 'straight'
       @eligibles = User.where(:gender => 'male', :sexual_orientation => 'straight') + User.where(:gender => 'male', :sexual_orientation => 'bisexual')
       @eligibles.each do |el|
-        if !current_user.rejects_by_id.include?(el.id)
+        # if !current_user.rejects_by_id.include?(el.id)
           Eligible.create(user_id: current_user.id, eligible_id: el.id)
-        end
+        # end
       end
     elsif current_user.gender === 'female' &&
       current_user.sexual_orientation === 'lesbian'
       @eligibles = User.where(:gender => 'female', :sexual_orientation => 'bisexual') + User.where(:gender => 'female', :sexual_orientation => 'gay')
       @eligibles.each do |el|
-        if !current_user.rejects_by_id.include?(el.id)
+        # if !current_user.rejects_by_id.include?(el.id)
           Eligible.create(user_id: current_user.id, eligible_id: el.id)
-        end
+        # end
       end
     end
   end
